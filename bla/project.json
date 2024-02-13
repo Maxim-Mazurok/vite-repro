@@ -1,0 +1,19 @@
+{
+  "name": "bla",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "bla/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/bla",
+        "main": "bla/src/index.ts",
+        "tsConfig": "bla/tsconfig.lib.json",
+        "assets": ["bla/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

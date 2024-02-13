@@ -1,3 +1,14 @@
+# Repro steps:
+
+1. `npx create-nx-workspace@latest`
+1. `nx add @nx/vite`
+1. `nx generate library` (name: `bla`; test runner: `vitest`, bundler: `tsc` (default))
+1. `cp bla/src/lib/bla.spec.ts bla/src/lib/bla2.spec.ts`
+1. `nx run bla:test`
+1. `Error: [birpc] timeout on calling "fetch"`
+
+---
+
 # ViteRepro
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
@@ -51,6 +62,7 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 - [Learn more how to setup CI](https://nx.dev/recipes/ci)
 
 ## Explore the Project Graph
+
 Run `nx graph` to show the graph of the workspace.
 It will show tasks that you can run with Nx.
 
